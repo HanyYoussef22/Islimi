@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:islami/Home_Layout.dart';
 
+import 'My_Themes.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -13,10 +15,20 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      initialRoute: HomeLayout.roudeName,
       routes:{
         HomeLayout.roudeName:(context)=>HomeLayout(),
       },
-      initialRoute: HomeLayout.roudeName,
 
+      theme: MyThemesData.lightTheme,
+      darkTheme: MyThemesData.darkTheme,
+      // theme: ThemeData(
+      //   appBarTheme: const AppBarTheme(
+      //       backgroundColor: Colors.transparent,
+      //     elevation: 0.0,
+    //     )
+    //   ),
     );
-  }}
+  }
+
+}
