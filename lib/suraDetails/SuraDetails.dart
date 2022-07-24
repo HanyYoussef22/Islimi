@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/services.dart' show rootBundle;
+
 
 class SuraDetails extends StatefulWidget {
   static const roudeName ='SuraDetails';
@@ -33,7 +35,6 @@ List<String> verses=[];
             ),
             body: ListView.builder(itemBuilder: (context,index){
               return Text(verses[index].toString());
-
             }
               ,itemCount: verses.length,
             ),
@@ -43,12 +44,14 @@ List<String> verses=[];
 
   void loadFile(int index) async {
     String content =
-    await rootBundle.loadString('assets/files/${index + 1}.txt');
+    await rootBundle.loadString('file/${index + 1}.txt');
     print(content);
     List<String> ayat = [];
     ayat.add(content);
     verses = ayat;
-     setState(() {});
+     setState(() {
+
+     });
   }
 }
 class SuraDetailsArgs {
