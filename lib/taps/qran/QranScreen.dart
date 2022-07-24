@@ -26,7 +26,7 @@ List<String>suraName=["الفاتحه","البقرة","آل عمران","الن�
                 color: Theme.of(context).primaryColor ,);
             },
               itemBuilder: (contex,index){
-            return SuraNameItem('${suraName[index]}');
+            return SuraNameItem('${suraName[index]}',index);
           },itemCount: suraName.length),
         )
       ],

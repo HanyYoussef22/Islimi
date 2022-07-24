@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami/Home_Layout.dart';
+import 'package:islami/suraDetails/SuraDetails.dart';
 
 import 'My_Themes.dart';
 
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       initialRoute: HomeLayout.roudeName,
       routes:{
         HomeLayout.roudeName:(context)=>HomeLayout(),
+        SuraDetails.roudeName:(context)=>SuraDetails(),
       },
 
       theme: MyThemesData.lightTheme,
