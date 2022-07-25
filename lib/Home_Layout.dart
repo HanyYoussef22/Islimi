@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:islami/taps/AhadethScreen.dart';
+import 'package:islami/taps/AhadethScreen/AhadethScreen.dart';
 import 'package:islami/taps/qran/QranScreen.dart';
 import 'package:islami/taps/RadioScreen.dart';
 import 'package:islami/taps/SebhaScreen.dart';

@@ -1,7 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/services.dart' show rootBundle;
+
+import 'SuraDetailsItem.dart';
 
 
 class SuraDetails extends StatefulWidget {
@@ -19,7 +20,9 @@ List<String> verses=[];
   @override
   Widget build(BuildContext context) {
     SuraDetailsArg=ModalRoute.of(context)?.settings.arguments as SuraDetailsArgs;
-    loadFile(SuraDetailsArg.index);
+    if (verses.isEmpty){
+      loadFile(SuraDetailsArg.index);
+    }
     return Stack(
         children: [
           Image.asset('asstes/images/main_background.png',
@@ -33,10 +36,18 @@ List<String> verses=[];
               title: Text('${SuraDetailsArg.SuraName}',style: Theme.of(context).textTheme.headline1,),centerTitle: true,
 
             ),
-            body: ListView.builder(itemBuilder: (context,index){
-              return Text(verses[index].toString());
-            }
-              ,itemCount: verses.length,
+            body:
+            Expanded(
+
+              child:
+               verses.isEmpty?
+                   Center(child: CircularProgressIndicator())
+               :
+              ListView.builder(itemBuilder: (context,index){
+                return SuraDetailsItem(verses[index].toString());
+              }
+                ,itemCount: verses.length,
+              ),
             ),
           )
         ]);
@@ -46,8 +57,8 @@ List<String> verses=[];
     String content =
     await rootBundle.loadString('file/${index + 1}.txt');
     print(content);
-    List<String> ayat = [];
-    ayat.add(content);
+    List<String> ayat =  content.split('\n');
+    // ayat.add(content);
     verses = ayat;
      setState(() {
 
