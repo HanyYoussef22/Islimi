@@ -37,17 +37,10 @@ List<String> verses=[];
 
             ),
             body:
-            Expanded(
-
-              child:
-               verses.isEmpty?
-                   Center(child: CircularProgressIndicator())
-               :
-              ListView.builder(itemBuilder: (context,index){
-                return SuraDetailsItem(verses[index].toString());
-              }
-                ,itemCount: verses.length,
-              ),
+            ListView.builder(itemBuilder: (context,index){
+              return SuraDetailsItem('${verses[index]}');
+            }
+              ,itemCount: verses.length,
             ),
           )
         ]);
