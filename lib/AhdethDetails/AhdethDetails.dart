@@ -4,6 +4,7 @@ import 'package:islami/AhdethDetails/AhdethDetails.dart';
 import '../taps/AhadethScreen/AhadethScreen.dart';
 import 'AhdethDetails.dart';
 import 'AhdethDetails.dart';
+import 'hadethDetailsItem.dart';
 
 class AhdethDetails extends StatefulWidget {
 static const roudeName ='AhdethDetails';
@@ -37,9 +38,9 @@ class _AhdethDetailsState extends State<AhdethDetails> {
             body:
             ListView.builder(itemBuilder: (context,index)
             {
-              return Text('${model.content}');
+              return HadethDetailsItem('${model.content[index]}');
             }
-              ,itemCount: 1,
+              ,itemCount: model.content.length,
             ),
           )
         ]);
