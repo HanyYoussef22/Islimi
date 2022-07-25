@@ -36,10 +36,18 @@ List<String> verses=[];
               title: Text('${SuraDetailsArg.SuraName}',style: Theme.of(context).textTheme.headline1,),centerTitle: true,
 
             ),
-            body: ListView.builder(itemBuilder: (context,index){
-              return SuraDetailsItem(verses[index].toString());
-            }
-              ,itemCount: verses.length,
+            body:
+            Expanded(
+
+              child:
+               verses.isEmpty?
+                   Center(child: CircularProgressIndicator())
+               :
+              ListView.builder(itemBuilder: (context,index){
+                return SuraDetailsItem(verses[index].toString());
+              }
+                ,itemCount: verses.length,
+              ),
             ),
           )
         ]);
