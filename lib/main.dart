@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami/Home_Layout.dart';
 import 'package:islami/suraDetails/SuraDetails.dart';
-
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'AhdethDetails/AhdethDetails.dart';
 import 'My_Themes.dart';
 
@@ -16,6 +16,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Localizations Sample App',
+      localizationsDelegates: [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        Locale('en', ''), // English, no country code
+        Locale('ar', ''), // Spanish, no country code
+      ],
       debugShowCheckedModeBanner: false,
       initialRoute: HomeLayout.roudeName,
       routes:{
