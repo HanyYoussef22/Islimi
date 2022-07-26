@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'AhdethItem.dart';
 
@@ -26,7 +27,8 @@ List<HadethModel>allAhdeth=[];
           child: Image.asset('asstes/images/ahdeth.png',),
         ))
        ,Divider(color: Theme.of(context).primaryColor,thickness: 2,),
-        Center(child: Text('Ahdeth',style: Theme.of(context).textTheme.headline2,)),
+        Center(child: Text(AppLocalizations.of(context)!.ahadeth
+    ,style: Theme.of(context).textTheme.headline2,)),
         Divider(color: Theme.of(context).primaryColor,thickness: 2,),
 
         Expanded(

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:islami/taps/AhadethScreen/AhadethScreen.dart';
+import 'package:islami/taps/SetttingScreen/SetingScreen.dart';
 import 'package:islami/taps/qran/QranScreen.dart';
 import 'package:islami/taps/RadioScreen.dart';
 import 'package:islami/taps/SebhaScreen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class HomeLayout extends StatefulWidget {
 static const String roudeName='HomeLayout';
 
@@ -25,7 +27,8 @@ int currentIndex=0;
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
-           title: Text('Islimi',style: Theme.of(context).textTheme.headline1,),centerTitle: true,
+           title: Text(AppLocalizations.of(context)!.islimiitem,
+             style: Theme.of(context).textTheme.headline1,),centerTitle: true,
           ),
           bottomNavigationBar: BottomNavigationBar(
             onTap: (index){
@@ -38,6 +41,7 @@ int currentIndex=0;
               BottomNavigationBarItem(icon: ImageIcon(AssetImage('asstes/images/sebha.png')),label: 'Sebha'),
               BottomNavigationBarItem(icon: ImageIcon(AssetImage('asstes/images/radio.png')),label: 'Radio'),
               BottomNavigationBarItem(icon: ImageIcon(AssetImage('asstes/images/quran1.png')),label: 'Ahadeth'),
+              BottomNavigationBarItem(icon: Icon(Icons.settings),label: 'Settings'),
             ],
 
           ),
@@ -46,5 +50,5 @@ int currentIndex=0;
       ],
     );
   }
-  List<Widget>taps=[QranScreen(),RadioScreen(),SebhaScreen(),AhadethScreen()];
+  List<Widget>taps=[QranScreen(),RadioScreen(),SebhaScreen(),AhadethScreen(),SettingScreen()];
 }

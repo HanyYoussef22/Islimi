@@ -3,6 +3,7 @@ import 'package:islami/Home_Layout.dart';
 import 'package:islami/suraDetails/SuraDetails.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'AhdethDetails/AhdethDetails.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'My_Themes.dart';
 
 void main() {
@@ -18,14 +19,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Localizations Sample App',
       localizationsDelegates: [
+        AppLocalizations.delegate, // Add this line
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: [
-        Locale('en', ''), // English, no country code
-        Locale('ar', ''), // Spanish, no country code
+        Locale('en'), // English, no country code
+        Locale('ar'), // Spanish, no country code
       ],
+      locale: Locale('en'),
       debugShowCheckedModeBanner: false,
       initialRoute: HomeLayout.roudeName,
       routes:{
