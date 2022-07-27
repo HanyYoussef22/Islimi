@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class MyThemesData{
   static Color standerdColor =const Color(0xffB7935F);
-  static Color BlackColor =Color(0xff242424);
+  static Color BlackColor =const Color(0xff242424);
   //-----------------------------------------------------
   static final ThemeData lightTheme = ThemeData(
     primaryColor: standerdColor,
