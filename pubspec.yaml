@@ -32,6 +32,7 @@ dependencies:
   flutter_localizations: # Add this line
     sdk: flutter         # Add this line
   intl: ^0.17.0 # Add this line
+  provider: ^6.0.3
 
 
 
