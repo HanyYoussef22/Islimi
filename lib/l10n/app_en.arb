@@ -1,4 +1,8 @@
 {
-    "islimiitem": "islimi",
-    "ahadeth": "Ahsdeth"
+  "islamiTitle": "Islami",
+  "ahadeth": "Ahadeth",
+  "quran": "Quran",
+  "hadeth": "Ahadeth",
+  "setting": "settings",
+  "sebha": "Tasbeh"
 }

@@ -1,45 +1,67 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class ShowLanguageBottomSheet extends StatefulWidget {
+import '../../providers/app_provider.dart';
 
+class ShowLangiageBottomsheet extends StatefulWidget {
   @override
-  State<ShowLanguageBottomSheet> createState() => _ShowLanguageBottomSheetState();
+  State<ShowLangiageBottomsheet> createState() =>
+      _ShowLangiageBottomsheetState();
 }
 
-class _ShowLanguageBottomSheetState extends State<ShowLanguageBottomSheet> {
+class _ShowLangiageBottomsheetState extends State<ShowLangiageBottomsheet> {
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<AppProvider>(context);
     return Padding(
-      padding: const EdgeInsets.all(12.0),
+      padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
-         SelectedLanguage('English',true),
-          SelectedLanguage('العربيه',false),
-
-          
+          InkWell(
+              onTap: () {
+                provider.ChangeAppLanguage('en');
+                Navigator.pop(context);
+              },
+              child: SelectedLanguage(
+                  'English', provider.AppLanguage == 'en' ? true : false)),
+          InkWell(
+              onTap: () {
+                provider.ChangeAppLanguage('ar');
+                Navigator.pop(context);
+              },
+              child: SelectedLanguage(
+                  'العربية', provider.AppLanguage == 'en' ? false : true))
         ],
       ),
     );
   }
 
-  Widget SelectedLanguage(String Language,bool select)
-  {
-    if (select){
-      return  Row(
+  Widget SelectedLanguage(String text, bool selected) {
+    if (selected) {
+      return Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(Language,style:Theme.of(context).textTheme.headline2!.copyWith(
-              color: Theme.of(context).primaryColor)),
-          Icon(Icons.check,color: Theme.of(context).primaryColor,size: 25),
+          Text(text,
+              style: Theme.of(context)
+                  .textTheme
+                  .headline2!
+                  .copyWith(color: Theme.of(context).primaryColor)),
+          Icon(
+            Icons.check,
+            size: 25,
+            color: Theme.of(context).primaryColor,
+          )
         ],
       );
-    }else{
-      return  Row(
+    } else {
+      return Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(Language,style:Theme.of(context).textTheme.headline2),
-          Icon(Icons.check,size: 25),
+          Text(text, style: Theme.of(context).textTheme.headline2),
+          Icon(
+            Icons.check,
+            size: 25,
+          )
         ],
       );
     }

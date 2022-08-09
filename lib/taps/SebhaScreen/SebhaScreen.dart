@@ -4,8 +4,9 @@ class SebhaScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.blueGrey,
+    Size size = MediaQuery.of(context).size;
+    return Column(
+      children: [Text('chabjhk')],
     );
   }
 }
