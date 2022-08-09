@@ -32,10 +32,16 @@ int currentIndex=0;
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
-            title: Text(
-              AppLocalizations.of(context)!.islamiTitle,
-              style: Theme.of(context).textTheme.headline1,
-            ),centerTitle: true,
+            title: currentIndex == 4
+                ? Text(
+                    AppLocalizations.of(context)!.setting,
+                    style: Theme.of(context).textTheme.headline1,
+                  )
+                : Text(
+                    AppLocalizations.of(context)!.islamiTitle,
+                    style: Theme.of(context).textTheme.headline1,
+                  ),
+            centerTitle: true,
           ),
           bottomNavigationBar: BottomNavigationBar(
             onTap: (index){
@@ -43,10 +49,16 @@ int currentIndex=0;
               setState((){});
             },
             currentIndex: currentIndex,
-            items: [
-              BottomNavigationBarItem(icon: ImageIcon(AssetImage('asstes/images/moshaf_blue.png')),label: 'Quran'),
-              BottomNavigationBarItem(icon: ImageIcon(AssetImage('asstes/images/sebha.png')),label: 'Sebha'),
-              BottomNavigationBarItem(icon: ImageIcon(AssetImage('asstes/images/radio.png')),label: 'Radio'),
+            items: const [
+              BottomNavigationBarItem(
+                  icon: ImageIcon(AssetImage('asstes/images/moshaf_blue.png')),
+                  label: 'Quran'),
+              BottomNavigationBarItem(
+                  icon: ImageIcon(AssetImage('asstes/images/sebha.png')),
+                  label: 'Sebha'),
+              BottomNavigationBarItem(
+                  icon: ImageIcon(AssetImage('asstes/images/radio.png')),
+                  label: 'Radio'),
               BottomNavigationBarItem(
                   icon: ImageIcon(AssetImage('asstes/images/quran1.png')),
                   label: 'Ahadeth'),
