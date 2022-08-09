@@ -21,14 +21,14 @@ class _ShowThemeBottomsheetState extends State<ShowThemeBottomsheet> {
           InkWell(
               onTap: () {
                 provider.ChangeAppTheme(ThemeMode.light);
-                // Navigator.pop(context);
+                Navigator.pop(context);
               },
               child: SelectedTheme('Light',
                   provider.themeMode == ThemeMode.light ? true : false)),
           InkWell(
               onTap: () {
                 provider.ChangeAppTheme(ThemeMode.dark);
-                // Navigator.pop(context);
+                Navigator.pop(context);
               },
               child: SelectedTheme(
                   'Dark', provider.themeMode == ThemeMode.dark ? true : false))
@@ -77,11 +77,11 @@ class _ShowThemeBottomsheetState extends State<ShowThemeBottomsheet> {
               style: Theme.of(context)
                   .textTheme
                   .headline2!
-                  .copyWith(color: Colors.white)),
+                  .copyWith(color: Colors.blue)),
           Icon(
             Icons.check,
             size: 25,
-            color: Theme.of(context).primaryColor,
+            color: Colors.blue,
           )
         ],
       );
@@ -89,7 +89,11 @@ class _ShowThemeBottomsheetState extends State<ShowThemeBottomsheet> {
       return Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(text, style: Theme.of(context).textTheme.headline2),
+          Text(text,
+              style: Theme.of(context)
+                  .textTheme
+                  .headline2!
+                  .copyWith(color: Color(0xffB7935F))),
           Icon(
             Icons.check,
             size: 25,

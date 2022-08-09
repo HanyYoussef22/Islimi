@@ -16,7 +16,7 @@ class AppProvider extends ChangeNotifier {
 
   String changeMainBackground() {
     return themeMode == ThemeMode.light
-        ? 'assets/images/main_background.png'
-        : 'assets/images/background_dark.png';
+        ? 'asstes/images/main_background.png'
+        : 'asstes/images/background_dark.png';
   }
 }

@@ -45,11 +45,11 @@ class _ShowLangiageBottomsheetState extends State<ShowLangiageBottomsheet> {
               style: Theme.of(context)
                   .textTheme
                   .headline2!
-                  .copyWith(color: Theme.of(context).primaryColor)),
+                  .copyWith(color: Colors.blue)),
           Icon(
             Icons.check,
             size: 25,
-            color: Theme.of(context).primaryColor,
+            color: Colors.blue,
           )
         ],
       );
