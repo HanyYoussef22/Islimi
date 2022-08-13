@@ -36,7 +36,7 @@ class _SettingsTabState extends State<SettingsTab> {
               padding: EdgeInsets.all(12),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  color: Colors.grey,
+                  color: Colors.white70,
                   border: Border.all(color: Theme.of(context).primaryColor)),
               child: Text(
                 pro.AppLanguage == 'en' ? "English" : "العربية",
@@ -62,7 +62,7 @@ class _SettingsTabState extends State<SettingsTab> {
               padding: EdgeInsets.all(12),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  color: Colors.grey,
+                  color: Colors.white70,
                   border: Border.all(color: Theme.of(context).primaryColor)),
               child: Text(
                 pro.themeMode == ThemeMode.light ? "Light" : "Dark",
