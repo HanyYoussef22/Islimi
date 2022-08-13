@@ -41,8 +41,8 @@ List<String> verses=[];
             ),
             body:
             ListView.builder(itemBuilder: (context,index){
-              return SuraDetailsItem('${verses[index]}');
-            }
+              return SuraDetailsItem('${verses[index]}', index);
+          }
               ,itemCount: verses.length,
             ),
           )
@@ -50,15 +50,13 @@ List<String> verses=[];
   }
 
   void loadFile(int index) async {
-    String content =
-    await rootBundle.loadString('file/${index + 1}.txt');
-    print(content);
-    List<String> ayat =  content.split('\n');
+    String content = await rootBundle.loadString('file/${index + 1}.txt');
+    // print(content);
+    List<String> ayat = [];
+    ayat = content.trim().split('\n');
     // ayat.add(content);
     verses = ayat;
-     setState(() {
-
-     });
+    setState(() {});
   }
 }
 class SuraDetailsArgs {
