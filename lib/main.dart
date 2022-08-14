@@ -4,10 +4,13 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:islami/Home_Layout.dart';
 import 'package:islami/providers/app_provider.dart';
 import 'package:islami/suraDetails/SuraDetails.dart';
+import 'package:islami/taps/SebhaScreen/SebhaMsa.dart';
 import 'package:provider/provider.dart';
 
 import 'AhdethDetails/AhdethDetails.dart';
 import 'My_Themes.dart';
+import 'taps/SebhaScreen/SabahTsapeh.dart';
+import 'taps/SebhaScreen/Tsabeh.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
@@ -40,11 +43,15 @@ class MyApp extends StatelessWidget {
         HomeLayout.roudeName: (context) => HomeLayout(),
         SuraDetails.roudeName: (context) => SuraDetails(),
         AhdethDetails.roudeName: (context) => AhdethDetails(),
+        SabahTsapeh.roudeName: (context) => SabahTsapeh(),
+        SebhaMsa.roudeName: (context) => SebhaMsa(),
+        SebhaZaker.roudeName: (context) => SebhaZaker()
       },
 
       theme: MyThemesData.lightTheme,
       darkTheme: MyThemesData.darkTheme,
       themeMode: provider.themeMode,
+
       // theme: ThemeData(
       //   appBarTheme: const AppBarTheme(
       //       backgroundColor: Colors.transparent,
@@ -53,5 +60,4 @@ class MyApp extends StatelessWidget {
       //   ),
     );
   }
-
 }
